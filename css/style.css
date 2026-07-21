@@ -1,0 +1,130 @@
+/* Light Theme with Blue Accents - No Animations */
+body {
+    background-color: #ffffff;
+    color: #333333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Typography and Colors */
+h1, h2, h3, h4, h5, h6 {
+    color: #004085;
+}
+
+.text-primary {
+    color: #0d6efd !important;
+}
+
+.bg-primary {
+    background-color: #0d6efd !important;
+}
+
+.bg-light-blue {
+    background-color: #e9f2fb;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 2px solid #0d6efd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.navbar-brand, .nav-link {
+    color: #004085 !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #0d6efd !important;
+}
+
+/* Cards */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card-header {
+    background-color: #e9f2fb;
+    border-bottom: 1px solid #dee2e6;
+    color: #004085;
+    font-weight: bold;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+.btn-outline-primary {
+    color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0d6efd;
+    color: #ffffff;
+}
+
+/* Forms */
+.form-control, .form-select {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Tables */
+.table {
+    color: #333333;
+}
+.table thead {
+    background-color: #e9f2fb;
+    color: #004085;
+}
+
+/* Footer */
+.footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    color: #6c757d;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* Badges */
+.badge {
+    border-radius: 4px;
+}
+
+/* Progress bar for scores */
+.progress {
+    height: 20px;
+    border-radius: 4px;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    background-color: #0d6efd;
+}
+
+/* Explicitly disable all transitions and animations */
+*, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+}

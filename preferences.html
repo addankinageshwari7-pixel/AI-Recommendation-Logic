@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm mt-4">
+            <div class="card-header text-center py-3">
+                <h4 class="mb-0">User Preferences</h4>
+            </div>
+            <div class="card-body p-4">
+                <form id="preferenceForm" method="POST" action="{{ url_for('preferences') }}">
+                    
+                    <div class="mb-4">
+                        <label for="category" class="form-label fw-bold">Select Category (Optional)</label>
+                        <select class="form-select" id="category" name="category">
+                            <option value="">All Categories</option>
+                            {% for cat in categories %}
+                                <option value="{{ cat }}">{{ cat }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="form-text">Choose a specific domain to narrow down recommendations.</div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="interests" class="form-label fw-bold">Select Interests / Keywords</label>
+                        <textarea class="form-control" id="interests" name="interests" rows="3" placeholder="e.g., Python, Machine Learning, Data Science, Web Development" required></textarea>
+                        <div class="form-text">Enter keywords, skills, or topics you are interested in.</div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Favourite Items Features (Multiple Choice)</label>
+                        <div class="row g-2">
+                            <div class="col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Beginner Friendly" id="check1" name="features">
+                                    <label class="form-check-label" for="check1">Beginner Friendly</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Advanced" id="check2" name="features">
+                                    <label class="form-check-label" for="check2">Advanced Level</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Hands-on Projects" id="check3" name="features">
+                                    <label class="form-check-label" for="check3">Hands-on Projects</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Theory" id="check4" name="features">
+                                    <label class="form-check-label" for="check4">Theory & Concepts</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg">Get Recommendations</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

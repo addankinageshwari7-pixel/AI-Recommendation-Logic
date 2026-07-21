@@ -1,0 +1,21 @@
+id,title,category,description
+1,Python for Data Science,Programming,Learn Python programming from scratch focusing on Data Science libraries like Pandas and NumPy.
+2,Machine Learning A-Z,AI/ML,Comprehensive guide to Machine Learning algorithms including regression classification and clustering.
+3,Web Development Bootcamp,Programming,Complete full stack web development with HTML CSS JavaScript Node.js and React.
+4,Deep Learning Specialization,AI/ML,Master neural networks convolutional networks and sequence models using TensorFlow.
+5,React Native Mobile App Development,Mobile Development,Build cross-platform mobile apps using React Native and JavaScript.
+6,iOS App Development with Swift,Mobile Development,Learn to build native iOS applications using Swift and Xcode.
+7,Data Engineering Basics,Data Science,Introduction to data pipelines ETL processes and big data technologies.
+8,Natural Language Processing,AI/ML,Learn NLP techniques text mining and sentiment analysis using Python.
+9,Advanced CSS and Sass,Design,Master advanced CSS techniques animations and responsive design.
+10,UX/UI Design Fundamentals,Design,Learn the basics of User Experience and User Interface design principles.
+11,Flask Backend Development,Programming,Build scalable web applications and APIs using Python and Flask framework.
+12,Introduction to Cybersecurity,Security,Learn the fundamentals of cybersecurity ethical hacking and network security.
+13,Cloud Computing with AWS,Cloud,Master AWS services including EC2 S3 RDS and serverless architecture.
+14,Docker and Kubernetes,DevOps,Learn containerization and orchestration using Docker and Kubernetes.
+15,Agile Project Management,Management,Master Agile and Scrum methodologies for software project management.
+16,Digital Marketing Masterclass,Marketing,Learn SEO social media marketing and digital strategy.
+17,Blockchain Fundamentals,Technology,Understand the basics of blockchain technology cryptocurrencies and smart contracts.
+18,Game Development with Unity,Game Dev,Create 2D and 3D games using Unity engine and C#.
+19,Statistics for Data Science,Data Science,Learn essential statistical concepts and probability for data analysis.
+20,Advanced Excel Data Analysis,Data Science,Master advanced Excel functions PivotTables and data visualization techniques.

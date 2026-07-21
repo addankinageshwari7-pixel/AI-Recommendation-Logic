@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h2 class="text-primary border-bottom pb-2">Admin Panel</h2>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-4">
+        <!-- Control Panel -->
+        <div class="card shadow-sm border-0 mb-4">
+            <div class="card-header bg-white">
+                <h5 class="mb-0 text-primary">Model Controls</h5>
+            </div>
+            <div class="card-body text-center">
+                <form method="POST" action="{{ url_for('admin') }}" class="mb-3">
+                    <input type="hidden" name="action" value="retrain">
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="bi bi-arrow-repeat me-2"></i> Retrain Model
+                    </button>
+                    <small class="text-muted d-block mt-2">Rebuilds TF-IDF matrix from current dataset.</small>
+                </form>
+                
+                <form method="POST" action="{{ url_for('admin') }}" onsubmit="return confirm('Are you sure you want to delete the dataset?');">
+                    <input type="hidden" name="action" value="delete">
+                    <button type="submit" class="btn btn-outline-danger w-100">
+                        <i class="bi bi-trash me-2"></i> Delete Dataset
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Upload Dataset -->
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-white">
+                <h5 class="mb-0 text-primary">Upload Dataset</h5>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('admin') }}" enctype="multipart/form-data">
+                    <input type="hidden" name="action" value="upload">
+                    <div class="mb-3">
+                        <label for="dataset_file" class="form-label">Select CSV File</label>
+                        <input class="form-control" type="file" id="dataset_file" name="dataset_file" accept=".csv" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-8">
+        <!-- Dataset View -->
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0 text-primary">Current Dataset Overview</h5>
+                <span class="badge bg-secondary">{{ records|length }} Records</span>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive" style="max-height: 500px; overflow-y: auto;">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light sticky-top">
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in records %}
+                            <tr>
+                                <td>{{ row.id }}</td>
+                                <td class="fw-bold">{{ row.title }}</td>
+                                <td><span class="badge bg-light text-dark border">{{ row.category }}</span></td>
+                                <td class="text-truncate" style="max-width: 250px;" title="{{ row.description }}">{{ row.description }}</td>
+                            </tr>
+                            {% else %}
+                            <tr>
+                                <td colspan="4" class="text-center py-4 text-muted">No dataset available. Please upload items.csv.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

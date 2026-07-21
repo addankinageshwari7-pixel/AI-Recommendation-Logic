@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h2 class="text-primary border-bottom pb-2">Analytics Dashboard</h2>
+    </div>
+</div>
+
+<div class="row g-4 mb-5">
+    <div class="col-md-4">
+        <div class="card bg-light-blue border-0 shadow-sm text-center h-100 py-4">
+            <h1 class="display-4 text-primary fw-bold">{{ total_users }}</h1>
+            <p class="text-muted text-uppercase fw-bold mb-0">Total Users</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-light-blue border-0 shadow-sm text-center h-100 py-4">
+            <h1 class="display-4 text-primary fw-bold">{{ total_recommendations }}</h1>
+            <p class="text-muted text-uppercase fw-bold mb-0">Recommendations Generated</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-light-blue border-0 shadow-sm text-center h-100 py-4">
+            <h3 class="text-primary fw-bold my-auto px-2">{{ most_selected_category }}</h3>
+            <p class="text-muted text-uppercase fw-bold mb-0 mt-3">Most Popular Category</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-white">
+                <h5 class="mb-0 text-primary">Category Distribution</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="categoryChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const categoryData = {{ category_counts | tojson }};
+    const labels = Object.keys(categoryData);
+    const data = Object.values(categoryData);
+    
+    const ctx = document.getElementById('categoryChart').getContext('2d');
+    
+    // Disable Chart.js animations as requested
+    Chart.defaults.animation = false;
+    
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Number of Items',
+                data: data,
+                backgroundColor: '#0d6efd',
+                borderRadius: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 1
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
+{% endblock %}

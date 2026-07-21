@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row align-items-center py-5">
+    <div class="col-lg-6 mb-4 mb-lg-0">
+        <h1 class="display-4 fw-bold text-primary mb-3">Intelligent Recommendations</h1>
+        <p class="lead text-secondary mb-4">
+            Discover items tailored specifically to your preferences. Our AI Recommendation System uses advanced Cosine Similarity algorithms to analyze your interests and match you with the best available options.
+        </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="{{ url_for('preferences') }}" class="btn btn-primary btn-lg px-4 me-md-2">Get Started</a>
+            <a href="{{ url_for('about') }}" class="btn btn-outline-primary btn-lg px-4">Learn More</a>
+        </div>
+    </div>
+    <div class="col-lg-6 text-center">
+        <!-- Professional Icon/Illustration using Bootstrap Icons -->
+        <div class="p-5 bg-light-blue rounded-circle d-inline-flex justify-content-center align-items-center" style="width: 350px; height: 350px;">
+            <i class="bi bi-cpu text-primary" style="font-size: 8rem;"></i>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5 text-center g-4">
+    <div class="col-md-4">
+        <div class="card h-100 p-4 border-0 shadow-sm">
+            <div class="card-body">
+                <i class="bi bi-bar-chart text-primary mb-3" style="font-size: 3rem;"></i>
+                <h3 class="h4">Data-Driven</h3>
+                <p class="text-muted">Analyzes thousands of attributes to find your perfect match.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 p-4 border-0 shadow-sm">
+            <div class="card-body">
+                <i class="bi bi-lightning text-primary mb-3" style="font-size: 3rem;"></i>
+                <h3 class="h4">Fast & Accurate</h3>
+                <p class="text-muted">Instant processing with highly confident recommendation scores.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 p-4 border-0 shadow-sm">
+            <div class="card-body">
+                <i class="bi bi-shield-check text-primary mb-3" style="font-size: 3rem;"></i>
+                <h3 class="h4">Professional AI</h3>
+                <p class="text-muted">Built with Scikit-learn and state-of-the-art ML techniques.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
